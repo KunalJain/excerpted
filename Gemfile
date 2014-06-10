@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+def darwin_only(require_as = true)
+  RbConfig::CONFIG['host_os'] =~ /darwin/ ? require_as : false
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
@@ -26,6 +29,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+gem 'haml'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -38,3 +43,21 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+
+group :development, :test do
+  gem "quiet_assets"
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "rspec-rails"
+  gem "fabrication"
+  gem "simplecov"
+  gem "database_cleaner"
+  gem "capybara-rails"
+  gem "annotate"
+  gem "zeus", require: false
+  gem "brakeman", require: false
+  gem 'rb-fsevent', :require => darwin_only
+  gem 'terminal-notifier-guard', :require => darwin_only
+  gem 'guard-rspec'
+  gem 'coveralls', require: false
+end
