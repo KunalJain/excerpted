@@ -16,16 +16,16 @@ require 'rails_helper'
 RSpec.describe Theme, :type => :model do
   
   context "when basic theme values are defaults" do
-    it "should have the sensible default values" do
+    it "has the default values" do
       theme = Theme.new
-      expect(theme.bgcolor).to eq 'EEEEEE'
-      expect(theme.bordercolor).to eq '333333'
-      expect(theme.textcolor).to eq '333333'   
+      expect(theme.bgcolor).to eq Theme::DEFAULTS[:bgcolor]
+      expect(theme.bordercolor).to eq Theme::DEFAULTS[:bordercolor]
+      expect(theme.textcolor).to eq Theme::DEFAULTS[:textcolor]   
     end    
   end
 
   context "when basic theme values are set explicitly" do
-    it "should return the explicitly set values" do
+    it "returns the explicitly set values" do
       theme = Theme.new
       theme.bgcolor = 'FF0000'
       theme.bordercolor = '00FF00'
