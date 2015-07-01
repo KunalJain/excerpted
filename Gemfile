@@ -45,17 +45,18 @@ gem 'haml'
 
 
 group :development, :test do
-  gem "quiet_assets"
-  gem "better_errors"
-  gem "binding_of_caller"
-  gem "rspec-rails"
-  gem "fabrication"
-  gem "simplecov"
-  gem "database_cleaner"
-  gem "capybara-rails"
-  gem "annotate"
-  gem "zeus", require: false
-  gem "brakeman", require: false
+  gem 'rspec_junit_formatter'
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'rspec-rails'
+  gem 'fabrication'
+  gem 'simplecov'
+  gem 'database_cleaner'
+  gem 'capybara-rails'
+  gem 'annotate'
+  gem 'zeus', require: false
+  gem 'brakeman', require: false
   gem 'rb-fsevent', :require => darwin_only
   gem 'terminal-notifier-guard', :require => darwin_only
   gem 'guard-rspec'
