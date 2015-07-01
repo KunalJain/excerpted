@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20140610064405) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "themes", force: true do |t|
+  create_table "themes", force: :cascade do |t|
     t.string   "bgcolor",     limit: 6
     t.string   "bordercolor", limit: 6
     t.string   "textcolor",   limit: 6
